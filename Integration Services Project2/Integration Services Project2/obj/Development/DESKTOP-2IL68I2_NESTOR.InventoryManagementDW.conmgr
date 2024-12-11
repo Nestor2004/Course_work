@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DESKTOP-2IL68I2_NESTOR.InventoryManagementDW"
+  DTS:DTSID="{DA1ABA3C-C511-480A-A089-576281FDC560}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-2IL68I2\NESTOR;Initial Catalog=InventoryManagementDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Integration Services Project2-{DA1ABA3C-C511-480A-A089-576281FDC560}DESKTOP-2IL68I2\NESTOR.InventoryManagementDW;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

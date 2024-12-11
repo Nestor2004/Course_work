@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet4">
+    <Query>
+      <DataSourceReference>DataSource1</DataSourceReference>
+      <CommandText>EVALUATE SUMMARIZECOLUMNS('Fact Transactions'[Transaction Type], 'Dim Products'[Product ID], 'Dim Products'[Name], 'Dim Products'[Purchase Price], 'Dim Products'[Sale Price], 'Dim Date'[Date], FILTER(VALUES('Fact Transactions'[Transaction Type]), ('Fact Transactions'[Transaction Type] = "Sale")), "Quantity", [Quantity], "Discount Rate", [Discount Rate], "Total_Profit", [Total_Profit])</CommandText>
+      <rd:DesignerState>
+        <QueryDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+          <CommandType>DAX</CommandType>
+          <QuerySpecification xsi:type="MDXQuerySpecification">
+            <Select>
+              <Items>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Fact Transactions</DimensionName>
+                    <HierarchyName>Transaction Type</HierarchyName>
+                    <HierarchyUniqueName>[Fact Transactions].[Transaction Type]</HierarchyUniqueName>
+                    <LevelName>Transaction Type</LevelName>
+                    <UniqueName>[Fact Transactions].[Transaction Type].[Transaction Type]</UniqueName>
+                  </ID>
+                  <ItemCaption>Transaction Type</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Products</DimensionName>
+                    <HierarchyName>Product ID</HierarchyName>
+                    <HierarchyUniqueName>[Dim Products].[Product ID]</HierarchyUniqueName>
+                    <LevelName>Product ID</LevelName>
+                    <UniqueName>[Dim Products].[Product ID].[Product ID]</UniqueName>
+                  </ID>
+                  <ItemCaption>Product ID</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Products</DimensionName>
+                    <HierarchyName>Name</HierarchyName>
+                    <HierarchyUniqueName>[Dim Products].[Name]</HierarchyUniqueName>
+                    <LevelName>Name</LevelName>
+                    <UniqueName>[Dim Products].[Name].[Name]</UniqueName>
+                  </ID>
+                  <ItemCaption>Name</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Products</DimensionName>
+                    <HierarchyName>Purchase Price</HierarchyName>
+                    <HierarchyUniqueName>[Dim Products].[Purchase Price]</HierarchyUniqueName>
+                    <LevelName>Purchase Price</LevelName>
+                    <UniqueName>[Dim Products].[Purchase Price].[Purchase Price]</UniqueName>
+                  </ID>
+                  <ItemCaption>Purchase Price</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Products</DimensionName>
+                    <HierarchyName>Sale Price</HierarchyName>
+                    <HierarchyUniqueName>[Dim Products].[Sale Price]</HierarchyUniqueName>
+                    <LevelName>Sale Price</LevelName>
+                    <UniqueName>[Dim Products].[Sale Price].[Sale Price]</UniqueName>
+                  </ID>
+                  <ItemCaption>Sale Price</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Date</DimensionName>
+                    <HierarchyName>Date</HierarchyName>
+                    <HierarchyUniqueName>[Dim Date].[Date]</HierarchyUniqueName>
+                    <LevelName>Date</LevelName>
+                    <UniqueName>[Dim Date].[Date].[Date]</UniqueName>
+                  </ID>
+                  <ItemCaption>Date</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Measure">
+                    <MeasureName>Quantity</MeasureName>
+                    <UniqueName>[Measures].[Quantity]</UniqueName>
+                  </ID>
+                  <ItemCaption>Quantity</ItemCaption>
+                  <BackColor>true</BackColor>
+                  <ForeColor>true</ForeColor>
+                  <FontFamily>true</FontFamily>
+                  <FontSize>true</FontSize>
+                  <FontWeight>true</FontWeight>
+                  <FontStyle>true</FontStyle>
+                  <FontDecoration>true</FontDecoration>
+                  <FormattedValue>true</FormattedValue>
+                  <FormatString>true</FormatString>
+                </Item>
+                <Item>
+                  <ID xsi:type="Measure">
+                    <MeasureName>Discount Rate</MeasureName>
+                    <UniqueName>[Measures].[Discount Rate]</UniqueName>
+                  </ID>
+                  <ItemCaption>Discount Rate</ItemCaption>
+                  <BackColor>true</BackColor>
+                  <ForeColor>true</ForeColor>
+                  <FontFamily>true</FontFamily>
+                  <FontSize>true</FontSize>
+                  <FontWeight>true</FontWeight>
+                  <FontStyle>true</FontStyle>
+                  <FontDecoration>true</FontDecoration>
+                  <FormattedValue>true</FormattedValue>
+                  <FormatString>true</FormatString>
+                </Item>
+                <Item>
+                  <ID xsi:type="Measure">
+                    <MeasureName>Total_Profit</MeasureName>
+                    <UniqueName>[Measures].[Total_Profit]</UniqueName>
+                  </ID>
+                  <ItemCaption>Total_Profit</ItemCaption>
+                  <BackColor>true</BackColor>
+                  <ForeColor>true</ForeColor>
+                  <FontFamily>true</FontFamily>
+                  <FontSize>true</FontSize>
+                  <FontWeight>true</FontWeight>
+                  <FontStyle>true</FontStyle>
+                  <FontDecoration>true</FontDecoration>
+                  <FormattedValue>true</FormattedValue>
+                  <FormatString>true</FormatString>
+                </Item>
+              </Items>
+            </Select>
+            <AutoExecute>false</AutoExecute>
+            <From>Inventory Management DW</From>
+            <Filter>
+              <FilterItems>
+                <FilterItem>
+                  <HierarchyUniqueName>[Fact Transactions].[Transaction Type]</HierarchyUniqueName>
+                  <Condition xsi:type="EqualTo">
+                    <Members>
+                      <Member>
+                        <MemberUniqueName>[Fact Transactions].[Transaction Type].&amp;[Sale]</MemberUniqueName>
+                      </Member>
+                    </Members>
+                  </Condition>
+                </FilterItem>
+              </FilterItems>
+            </Filter>
+            <Calculations />
+            <Aggregates />
+            <QueryProperties>
+              <IncludeMemberValue>true</IncludeMemberValue>
+            </QueryProperties>
+          </QuerySpecification>
+          <Query>
+            <Statement>EVALUATE SUMMARIZECOLUMNS('Fact Transactions'[Transaction Type], 'Dim Products'[Product ID], 'Dim Products'[Name], 'Dim Products'[Purchase Price], 'Dim Products'[Sale Price], 'Dim Date'[Date], FILTER(VALUES('Fact Transactions'[Transaction Type]), ('Fact Transactions'[Transaction Type] = "Sale")), "Quantity", [Quantity], "Discount Rate", [Discount Rate], "Total_Profit", [Total_Profit])</Statement>
+            <ParameterDefinitions />
+          </Query>
+        </QueryDefinition>
+      </rd:DesignerState>
+    </Query>
+    <Fields>
+      <Field Name="Transaction_Type">
+        <DataField>Fact Transactions[Transaction Type]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Product_ID">
+        <DataField>Dim Products[Product ID]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Name">
+        <DataField>Dim Products[Name]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Purchase_Price">
+        <DataField>Dim Products[Purchase Price]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Sale_Price">
+        <DataField>Dim Products[Sale Price]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Date">
+        <DataField>Dim Date[Date]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Quantity">
+        <DataField>[Quantity]</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Discount_Rate">
+        <DataField>[Discount Rate]</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Total_Profit">
+        <DataField>[Total_Profit]</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

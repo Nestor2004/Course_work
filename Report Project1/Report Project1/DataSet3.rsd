@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet3">
+    <Query>
+      <DataSourceReference>DataSource1</DataSourceReference>
+      <CommandText> SELECT NON EMPTY { [Measures].[StockAtTheEnd] } ON COLUMNS, NON EMPTY { ([Dim Customers].[Customer ID].[Customer ID].ALLMEMBERS * [Dim Customers].[Name].[Name].ALLMEMBERS * [Dim Customers].[Address].[Address].ALLMEMBERS * [Dim Customers].[Discount Rate].[Discount Rate].ALLMEMBERS * [Dim Customers].[Debt].[Debt].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( Filter( [Dim Customers].[Debt].[Debt].ALLMEMBERS, Instr( [Dim Customers].[Debt].currentmember.Properties( 'Member_Caption' ), '1000' )  = 1  ) ) ON COLUMNS FROM [Inventory Management DW]) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+      <rd:DesignerState>
+        <QueryDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+          <CommandType>MDX</CommandType>
+          <QuerySpecification xsi:type="MDXQuerySpecification">
+            <Select>
+              <Items>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Customers</DimensionName>
+                    <HierarchyName>Customer ID</HierarchyName>
+                    <HierarchyUniqueName>[Dim Customers].[Customer ID]</HierarchyUniqueName>
+                    <LevelName>Customer ID</LevelName>
+                    <UniqueName>[Dim Customers].[Customer ID].[Customer ID]</UniqueName>
+                  </ID>
+                  <ItemCaption>Customer ID</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Customers</DimensionName>
+                    <HierarchyName>Name</HierarchyName>
+                    <HierarchyUniqueName>[Dim Customers].[Name]</HierarchyUniqueName>
+                    <LevelName>Name</LevelName>
+                    <UniqueName>[Dim Customers].[Name].[Name]</UniqueName>
+                  </ID>
+                  <ItemCaption>Name</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Customers</DimensionName>
+                    <HierarchyName>Address</HierarchyName>
+                    <HierarchyUniqueName>[Dim Customers].[Address]</HierarchyUniqueName>
+                    <LevelName>Address</LevelName>
+                    <UniqueName>[Dim Customers].[Address].[Address]</UniqueName>
+                  </ID>
+                  <ItemCaption>Address</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Customers</DimensionName>
+                    <HierarchyName>Discount Rate</HierarchyName>
+                    <HierarchyUniqueName>[Dim Customers].[Discount Rate]</HierarchyUniqueName>
+                    <LevelName>Discount Rate</LevelName>
+                    <UniqueName>[Dim Customers].[Discount Rate].[Discount Rate]</UniqueName>
+                  </ID>
+                  <ItemCaption>Discount Rate</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Customers</DimensionName>
+                    <HierarchyName>Debt</HierarchyName>
+                    <HierarchyUniqueName>[Dim Customers].[Debt]</HierarchyUniqueName>
+                    <LevelName>Debt</LevelName>
+                    <UniqueName>[Dim Customers].[Debt].[Debt]</UniqueName>
+                  </ID>
+                  <ItemCaption>Debt</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Measure">
+                    <MeasureName>StockAtTheEnd</MeasureName>
+                    <UniqueName>[Measures].[StockAtTheEnd]</UniqueName>
+                  </ID>
+                  <ItemCaption>StockAtTheEnd</ItemCaption>
+                  <BackColor>true</BackColor>
+                  <ForeColor>true</ForeColor>
+                  <FontFamily>true</FontFamily>
+                  <FontSize>true</FontSize>
+                  <FontWeight>true</FontWeight>
+                  <FontStyle>true</FontStyle>
+                  <FontDecoration>true</FontDecoration>
+                  <FormattedValue>true</FormattedValue>
+                  <FormatString>true</FormatString>
+                </Item>
+              </Items>
+            </Select>
+            <AutoExecute>false</AutoExecute>
+            <From>Inventory Management DW</From>
+            <Filter>
+              <FilterItems>
+                <FilterItem>
+                  <HierarchyUniqueName>[Dim Customers].[Debt]</HierarchyUniqueName>
+                  <Condition xsi:type="BeginsWith">
+                    <Basis>Caption</Basis>
+                    <Expression>1000</Expression>
+                  </Condition>
+                </FilterItem>
+              </FilterItems>
+            </Filter>
+            <Calculations />
+            <Aggregates />
+            <QueryProperties>
+              <IncludeMemberValue>true</IncludeMemberValue>
+            </QueryProperties>
+          </QuerySpecification>
+          <Query>
+            <Statement> SELECT NON EMPTY { [Measures].[StockAtTheEnd] } ON COLUMNS, NON EMPTY { ([Dim Customers].[Customer ID].[Customer ID].ALLMEMBERS * [Dim Customers].[Name].[Name].ALLMEMBERS * [Dim Customers].[Address].[Address].ALLMEMBERS * [Dim Customers].[Discount Rate].[Discount Rate].ALLMEMBERS * [Dim Customers].[Debt].[Debt].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( Filter( [Dim Customers].[Debt].[Debt].ALLMEMBERS, Instr( [Dim Customers].[Debt].currentmember.Properties( 'Member_Caption' ), '1000' )  = 1  ) ) ON COLUMNS FROM [Inventory Management DW]) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
+            <ParameterDefinitions />
+          </Query>
+        </QueryDefinition>
+      </rd:DesignerState>
+    </Query>
+    <Fields>
+      <Field Name="Customer_ID">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Level" UniqueName="[Dim Customers].[Customer ID].[Customer ID]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Name">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Level" UniqueName="[Dim Customers].[Name].[Name]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Address">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Level" UniqueName="[Dim Customers].[Address].[Address]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Discount_Rate">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Level" UniqueName="[Dim Customers].[Discount Rate].[Discount Rate]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Debt">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Level" UniqueName="[Dim Customers].[Debt].[Debt]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="StockAtTheEnd">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Measure" UniqueName="[Measures].[StockAtTheEnd]" /&gt;</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>
